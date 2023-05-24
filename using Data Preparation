@@ -1,0 +1,28 @@
+X = Features.iloc[: ,:-1].values
+Y = Features['labels'].values
+
+
+# As this is a multiclass classification problem onehotencoding our Y.
+encoder = OneHotEncoder()
+Y = encoder.fit_transform(np.array(Y).reshape(-1,1)).toarray()
+
+
+# splitting data
+x_train, x_test, y_train, y_test = train_test_split(X, Y, random_state=0, shuffle=True)
+x_train.shape, y_train.shape, x_test.shape, y_test.shape
+
+
+
+# scaling our data with sklearn's Standard scaler
+scaler = StandardScaler()
+x_train = scaler.fit_transform(x_train)
+x_test = scaler.transform(x_test)
+x_train.shape, y_train.shape, x_test.shape, y_test.shape
+
+
+
+
+# making our data compatible to model.
+x_train = np.expand_dims(x_train, axis=2)
+x_test = np.expand_dims(x_test, axis=2)
+x_train.shape, y_train.shape, x_test.shape, y_test.shape
