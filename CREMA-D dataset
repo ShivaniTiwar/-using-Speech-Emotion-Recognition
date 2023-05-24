@@ -1,0 +1,31 @@
+savee_directory_list = os.listdir(Savee)
+
+file_emotion = []
+file_path = []
+
+for file in savee_directory_list:
+    file_path.append(Savee + file)
+    part = file.split('_')[1]
+    ele = part[:-6]
+    if ele=='a':
+        file_emotion.append('angry')
+    elif ele=='d':
+        file_emotion.append('disgust')
+    elif ele=='f':
+        file_emotion.append('fear')
+    elif ele=='h':
+        file_emotion.append('happy')
+    elif ele=='n':
+        file_emotion.append('neutral')
+    elif ele=='sa':
+        file_emotion.append('sad')
+    else:
+        file_emotion.append('surprise')
+        
+# dataframe for emotion of files
+emotion_df = pd.DataFrame(file_emotion, columns=['Emotions'])
+
+# dataframe for path of files.
+path_df = pd.DataFrame(file_path, columns=['Path'])
+Savee_df = pd.concat([emotion_df, path_df], axis=1)
+Savee_df.head()
