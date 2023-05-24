@@ -1,0 +1,5 @@
+# Paths for data.
+Ravdess = "/kaggle/input/ravdess-emotional-speech-audio/audio_speech_actors_01-24/"
+Crema = "/kaggle/input/cremad/AudioWAV/"
+Tess = "/kaggle/input/toronto-emotional-speech-set-tess/tess toronto emotional speech set data/TESS Toronto emotional speech set data/"
+Savee = "/kaggle/input/surrey-audiovisual-expressed-emotion-savee/ALL/"
